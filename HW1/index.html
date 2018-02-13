@@ -8,18 +8,180 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <header>
+        <header class="nav-list-container">
             <ul class="nav-list">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Interests</a></li>
-                <li><a href="#">Résumé</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#interests">Interests</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#resume">Résumé</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </header>
         <main>
-            <div class="homepage-image-container">
-                <img class="homepage-image" src="img/self-0.jpg" alt="">
-            </div>
+            <section id="home">
+                <article class="half">
+                    <header>
+                        <h1>Welcome!</h1>
+                    </header>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam mi, finibus vel est sed, tincidunt euismod nisl. Duis ornare hendrerit urna, iaculis hendrerit odio accumsan in. Vestibulum porta diam commodo elementum sollicitudin. Sed eleifend, nisi eu lacinia convallis, erat lacus congue nibh, vel congue orci justo convallis justo. Praesent dapibus felis odio, sed ultrices arcu molestie a. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia venenatis justo, sit amet aliquam erat. Integer iaculis vitae orci at ullamcorper. Proin fermentum quam quis euismod pretium. Vivamus malesuada magna a congue molestie. Cras vitae efficitur.</p>
+                </article>
+                <aside class="half shrink">
+                    <figure>
+                        <img class="homepage-image" src="img/self-0.jpg" alt="">
+                    </figure>
+                </aside>
+            </section>
+            <section id="interests">
+                <header>
+                    <h1>Interests</h1>
+                </header>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum auctor lectus id efficitur tristique. Suspendisse potenti. Suspendisse at efficitur velit, sit amet hendrerit risus. Nunc ac egestas ex, at pellentesque neque. Vestibulum lorem ligula, pretium sed mauris non, ultricies posuere leo. Ut odio metus, ornare ut nisi a, mollis imperdiet erat. Mauris accumsan porttitor nisl, sit amet placerat tortor cursus a. Praesent sodales interdum orci, sed ultricies purus interdum eu. Curabitur sagittis nibh sem, id porttitor metus mollis vitae. Donec volutpat in lectus vel varius. Vivamus viverra nisl at turpis lobortis pulvinar. Morbi volutpat imperdiet lectus dictum imperdiet. Ut tincidunt.</p>
+            </section>
+            <section id="courses">
+                <header class="section-header">
+                    <h1>Courses</h1>
+                </header>
+
+                <!-- credit for table goes to:
+                     https://codepen.io/alassetter/pen/cyrfB?editors=1100
+                -->
+                <table class="table-fill">
+	            	<thead>
+	            		<tr>
+	            			<th class="text-left">&nbsp;</th>
+	            			<th class="text-center">2014</th>
+	            			<th class="text-center">2015</th>
+	            			<th class="text-center">2016</th>
+	            			<th class="text-center">2017</th>
+	            			<th class="text-center">2018</th>
+	            		</tr>
+	            	</thead>
+	            	<tbody class="table-hover">
+	            		<tr>
+	            			<td class="text-center">January</td>
+	            			<td class="text-left">&nbsp;</td>
+	            			<td class="text-left">&nbsp;</td>
+	            			<td class="text-left">MATH 1338</td>
+	            			<td class="text-left">&nbsp;</td>
+	            			<td class="text-left">&nbsp;</td>
+	            		</tr>
+	            		<tr>
+	            			<td rowspan="5" class="text-center">Spring</td>
+	            			<td class="text-left">&nbsp;</td>
+	            			<td class="text-left">MATH 1337</td>
+	            			<td class="text-left">CEE 1331</td>
+	            			<td class="text-left">CSE 3381</td>
+	            			<td class="text-left">CSE 5349</td>
+	            		</tr>
+	            		<tr>
+	            			<td class="text-left">&nbsp;</td>
+	            			<td class="text-left">KNW 2300</td>
+	            			<td class="text-left">MATH 3353</td>
+	            			<td class="text-left">CSE 4344</td>
+	            			<td class="text-left">EMIS 3308</td>
+	            		</tr>
+	            		<tr>
+	            			<td class="text-left">&nbsp;</td>
+	            			<td class="text-left">CSE 1342</td>
+	            			<td class="text-left">CSE 2341</td>
+	            			<td class="text-left">CEE 3302</td>
+	            			<td class="text-left">CSE 5359</td>
+	            		</tr>
+	            		<tr>
+	            			<td class="text-left">&nbsp;</td>
+	            			<td class="text-left">CSE 2353</td>
+	            			<td class="text-left">CSE 2240</td>
+	            			<td class="text-left">CSE 3353</td>
+	            			<td class="text-left">CSE 4352</td>
+	            		</tr>
+	            		<tr>
+	            			<td class="text-left">&nbsp;</td>
+	            			<td class="text-left">DISC 1313</td>
+	            			<td class="text-left">&nbsp;</td>
+	            			<td class="text-left">GEOL 1313</td>
+	            			<td class="text-left">CSE 3345</td>
+	            		</tr>
+	            		<tr>
+	            			<td rowspan="3" class="text-center">Summer</td>
+	            			<td class="text-left">&nbsp;</td>
+	            			<td class="text-left">&nbsp;</td>
+	            			<td class="text-left">&nbsp;</td>
+	            			<td class="text-left">CSE 5343</td>
+	            			<td class="text-left">&nbsp;</td>
+	            		</tr>
+	            		<tr>
+	            			<td class="text-left">&nbsp;</td>
+	            			<td class="text-left">&nbsp;</td>
+	            			<td class="text-left">&nbsp;</td>
+	            			<td class="text-left">PHYS 1106</td>
+	            			<td class="text-left">&nbsp;</td>
+	            		</tr>
+	            		<tr>
+	            			<td class="text-left">&nbsp;</td>
+	            			<td class="text-left">&nbsp;</td>
+	            			<td class="text-left">&nbsp;</td>
+	            			<td class="text-left">PHYS 1304</td>
+	            			<td class="text-left">&nbsp;</td>
+	            		</tr>
+	            		<tr>
+	            			<td rowspan="6" class="text-center">Fall</td>
+	            			<td class="text-left">MATH 1304</td>
+	            			<td class="text-left">PHYS 1105</td>
+	            			<td class="text-left">CSE 3330</td>
+	            			<td class="text-left">CSE 5339</td>
+	            			<td class="text-left">CSE 4360</td>
+	            		</tr>
+	            		<tr>
+	            			<td class="text-left">PHIL 1301</td>
+	            			<td class="text-left">PHYS 1303</td>
+	            			<td class="text-left">CSE 3339</td>
+	            			<td class="text-left">MATH 3316</td>
+	            			<td class="text-left">CSE 5xxx</td>
+	            		</tr>
+	            		<tr>
+	            			<td class="text-left">PRW 1101</td>
+	            			<td class="text-left">CSE 2341</td>
+	            			<td class="text-left">CSE 4340</td>
+	            			<td class="text-left">CSE 4345</td>
+	            			<td class="text-left">CSE 5xxx</td>
+	            		</tr>
+	            		<tr>
+	            			<td class="text-left">SOCI 1300</td>
+	            			<td class="text-left">CSE 2240</td>
+	            			<td class="text-left">CSE 3342</td>
+	            			<td class="text-left">CSE 4351</td>
+	            			<td class="text-left">XXX xxxx</td>
+	            		</tr>
+	            		<tr>
+	            			<td class="text-left">CSE 1341</td>
+	            			<td class="text-left">&nbsp;</td>
+	            			<td class="text-left">&nbsp;</td>
+	            			<td class="text-left">CSE 4381</td>
+	            			<td class="text-left">&nbsp;</td>
+	            		</tr>
+	            		<tr>
+	            			<td class="text-left">ANTH 2363</td>
+	            			<td class="text-left">&nbsp;</td>
+	            			<td class="text-left">&nbsp;</td>
+	            			<td class="text-left">PRW 2110</td>
+	            			<td class="text-left">&nbsp;</td>
+	            		</tr>
+	            	</tbody>
+	            </table>
+            </section>
+            <section id="resume">
+                <header>
+                    <h1>Résumé</h1>
+                </header>
+                <object class="resume-container" data="img/2018-01-29_RobertRash-Resume.pdf" type="application/pdf">
+                    alt: <a href="img/2018-01-29_RobertRash-Resume.pdf">2018-01-29_RobertRash-Resume.pdf</a>
+                </object>
+            </section>
+            <section id="contact">
+                <header>
+                    <h1>Contact</h1>
+                </header>
+            </section>
         </main>
         <footer>
             <p>Copyright © 2018 Andy Rash</p>

@@ -1,25 +1,35 @@
+/*
+ * Global styling 
+ * */
+
 * {
     box-sizing: border-box;
 }
 
+/*
+ * Using Github's system font stack as described here:
+ * https://css-tricks.com/snippets/css/system-font-stack/
+ * */
 body {
     display: grid;
     min-height: 100vh;
-    grid-template-columns: 1fr;
-    grid-template-rows: min-content 1fr min-content;
-    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    grid-template-columns: 200px 1fr 200px;
+    grid-template-rows: min-content repeat(6, 1fr) min-content;
+    /*font-family: "Helvetica Neue", Helvetica, sans-serif;*/
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 16px;
+    padding: 0.8rem;
+}
+
+figure img {
+    display: block;
+    margin: ;
 }
 
 footer {
-    grid-row: 3;
-    grid-column: 1;
+    grid-row: 7 / 8;
+    grid-column: 1 / 4;
     text-align: center;
-}
-
-header {
-    grid-row: 1;
-    grid-column: 1;
 }
 
 html {
@@ -27,9 +37,36 @@ html {
 }
 
 main {
-    position: relative;
-    grid-row: 2;
-    grid-column: 1;
+    grid-row: 2 / 6;
+    grid-column: 2 / 3;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/*
+ * Body-level styling
+ * */
+
+#contact {
+    grid-row: 5 / 6;
+    display: flex;
+    flex-direction: column;
+}
+
+#courses {
+    grid-row: 4 / 5;
+    display: flex;
+    flex-direction: column;
+}
+
+.half {
+    flex-basis: 50%;
+}
+
+#home {
+    grid-row: 2 / 3;
+    display: flex;
+    flex-direction: row;
 }
 
 .homepage-image {
@@ -46,9 +83,20 @@ main {
     padding: 0;
 }
 
+#interests {
+    grid-row: 3 / 4;
+    display: flex;
+    flex-direction: column;
+}
+
 .nav-list {
     font-weight: bold;
     text-align: center;
+}
+
+.nav-list-container {
+    grid-row: 1 / 2;
+    grid-column: 1 / 4;
 }
 
 .nav-list li {
@@ -80,4 +128,94 @@ main {
 .nav-list li > a:hover:before {
     visibility: visible;
     transform: scaleX(1);
+}
+
+#resume {
+    grid-row: 5 / 6;
+    display: flex;
+    flex-direction: column;
+}
+
+.resume-container {
+    width: 100%;
+    height: 95vh;
+    margin: 0 0 1rem 0;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.section-header {
+    grid-column: 2 / 3;
+}
+
+.shrink {
+    flex-shrink: 1;
+}
+
+/*
+ * Table styling
+ *
+ * credit goes to:
+ * https://codepen.io/alassetter/pen/cyrfB?editors=1100
+ * */
+
+.table-fill {
+    grid-column: 2 / 3;
+    border-radius: 3px;
+    border-collapse: collapse;
+    margin: auto;
+}
+
+th {
+    color: rgba(150,150,150,1);
+    background: #1b1e24;
+    border-top: 1px solid #1b1e24;
+    border-bottom: 4px solid rgba(54,54,54,1);
+    border-right: 1px solid rgba(54,54,54,1);
+    border-left: 1px solid #1b1e24;
+    font-size: 21px;
+    padding: 12px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+th:last-child {
+    border-right: 1px solid #1b1e24;
+}
+
+tr {
+    border: 1px solid rgba(0,0,0,0.3);
+    color: #000;
+    font-size: 18px;
+}
+
+tr:first-child {
+    border-top: none;
+}
+
+tr:nth-child(odd) td {
+    background: #ebebeb;
+}
+
+tr:last-child td:first-child {
+    border-bottom-left-radius: 3px;
+}
+
+tr:last-child td:last-child {
+    border-bottom-right-radius: 3px;
+}
+
+td {
+    background: #fff;
+    padding: 12px;
+    text-align: center;
+    vertical-align: middle;
+    border-right: 1px solid rgba(0,0,0,0.25);
+}
+
+td:last-child {
+    border-right: none;
 }
