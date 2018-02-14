@@ -15,7 +15,6 @@ body {
     min-height: 100vh;
     grid-template-columns: 200px 1fr 200px;
     grid-template-rows: min-content repeat(6, 1fr) min-content;
-    /*font-family: "Helvetica Neue", Helvetica, sans-serif;*/
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 16px;
     padding: 0.8rem;
@@ -87,6 +86,14 @@ main {
     grid-row: 3 / 4;
     display: flex;
     flex-direction: column;
+}
+
+#interests-list {
+    column-count: 2;
+}
+
+#interests-list li {
+    list-style: disc inside;
 }
 
 .nav-list {
@@ -231,7 +238,8 @@ td:last-child {
 input[name="contact-form-name"],
 input[name="contact-form-email"],
 textarea[name="contact-form-message"] {
-    border: 0.1em solid rgba(0,0,0,0.25);
+    border: 0.1em solid rgba(0,0,0,1);
+    opacity: 0.3;
     width: 100%;
     margin: 0 0 1rem 0;
     padding-left: 0.25rem;
@@ -257,6 +265,7 @@ textarea[name="contact-form-message"] {
     border: 0.1em solid rgba(0,0,0,0.25);
     text-transform: uppercase;
     font-size: 16px;
+    z-index: 10;
 }
 
 #contact-form-submit:hover {
