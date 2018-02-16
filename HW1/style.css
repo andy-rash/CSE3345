@@ -1,3 +1,276 @@
+/*
+ * Global styling 
+ * */
+
 * {
-    -webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
+}
+
+/*
+ * Using Github's system font stack as described here:
+ * https://css-tricks.com/snippets/css/system-font-stack/
+ * */
+body {
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: 200px 1fr 200px;
+    grid-template-rows: min-content repeat(6, 1fr) min-content;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 16px;
+    padding: 0.8rem;
+}
+
+figure img {
+    display: block;
+    margin: ;
+}
+
+footer {
+    grid-row: 7 / 8;
+    grid-column: 1 / 4;
+    text-align: center;
+}
+
+html {
+    height: 100%;
+}
+
+main {
+    grid-row: 2 / 6;
+    grid-column: 2 / 3;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/*
+ * Body-level styling
+ * */
+
+#contact {
+    grid-row: 5 / 6;
+    display: flex;
+    flex-direction: column;
+}
+
+#courses {
+    grid-row: 4 / 5;
+    display: flex;
+    flex-direction: column;
+}
+
+.half {
+    flex-basis: 50%;
+}
+
+#home {
+    grid-row: 2 / 3;
+    display: flex;
+    flex-direction: row;
+}
+
+.homepage-image {
+    width: 100%;
+    height: 100%;
+}
+
+.homepage-image-container {
+    display: block;
+    width: 500px;
+    height: 375px;
+    margin: 0 auto;
+    border: 1px;
+    padding: 0;
+}
+
+#interests {
+    grid-row: 3 / 4;
+    display: flex;
+    flex-direction: column;
+}
+
+#interests-list {
+    column-count: 2;
+}
+
+#interests-list li {
+    list-style: disc inside;
+}
+
+.nav-list {
+    font-weight: bold;
+    text-align: center;
+}
+
+.nav-list-container {
+    grid-row: 1 / 2;
+    grid-column: 1 / 4;
+}
+
+.nav-list li {
+    display: inline; 
+    position: relative;
+    margin: 0 1rem 0 0;
+    text-decoration: none;
+}
+
+.nav-list li > a {
+    color: #000;
+    text-decoration: none;
+}
+
+.nav-list li > a:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 0.1rem;
+    bottom: 0;
+    left: 0;
+    border-radius: 5px;
+    background-color: #000;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.nav-list li > a:hover:before {
+    visibility: visible;
+    transform: scaleX(1);
+}
+
+#resume {
+    grid-row: 5 / 6;
+    display: flex;
+    flex-direction: column;
+}
+
+.resume-container {
+    width: 100%;
+    height: 95vh;
+    margin: 0 0 1rem 0;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.section-header {
+    grid-column: 2 / 3;
+}
+
+.shrink {
+    flex-shrink: 1;
+}
+
+/*
+ * Table styling
+ *
+ * credit goes to:
+ * https://codepen.io/alassetter/pen/cyrfB?editors=1100
+ * */
+
+.table-fill {
+    grid-column: 2 / 3;
+    border-radius: 3px;
+    border-collapse: collapse;
+    margin: auto;
+}
+
+th {
+    color: rgba(215,215,215,1);
+    background: #1b1e24;
+    border-top: 1px solid #1b1e24;
+    border-bottom: 4px solid rgba(54,54,54,1);
+    border-right: 1px solid rgba(54,54,54,1);
+    border-left: 1px solid #1b1e24;
+    font-size: 21px;
+    padding: 12px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+th:last-child {
+    border-right: 1px solid #1b1e24;
+}
+
+tr {
+    border: 1px solid rgba(0,0,0,0.3);
+    color: #000;
+    font-size: 18px;
+}
+
+tr:first-child {
+    border-top: none;
+}
+
+tr:nth-child(odd) td {
+    background: #ebebeb;
+}
+
+tr:last-child td:first-child {
+    border-bottom-left-radius: 3px;
+}
+
+tr:last-child td:last-child {
+    border-bottom-right-radius: 3px;
+}
+
+td {
+    background: #fff;
+    padding: 12px;
+    text-align: center;
+    vertical-align: middle;
+    border-right: 1px solid rgba(0,0,0,0.25);
+}
+
+td:last-child {
+    border-right: none;
+}
+
+/*
+ * Contact form styling 
+ * */
+
+.contact-form-container {
+    width: 50%;
+}
+
+input[name="contact-form-name"],
+input[name="contact-form-email"],
+textarea[name="contact-form-message"] {
+    border: 0.1em solid rgba(0,0,0,1);
+    opacity: 0.3;
+    width: 100%;
+    margin: 0 0 1rem 0;
+    padding-left: 0.25rem;
+    outline: none;
+    font-size: 16px;
+}
+
+input[name="contact-form-name"],
+input[name="contact-form-email"] {
+    height: 2rem;
+}
+
+textarea[name="contact-form-message"] {
+    resize: vertical;
+    overflow: auto;
+    height: 8rem;
+    padding-top: 0.5rem;
+}
+
+#contact-form-submit {
+    width: 100%;
+    height: 2rem;
+    border: 0.1em solid rgba(0,0,0,0.25);
+    text-transform: uppercase;
+    font-size: 16px;
+    z-index: 10;
+}
+
+#contact-form-submit:hover {
+    border: 0.1em solid rgba(0,0,0,0.25);
+    background: rgba(0,0,0,1);
+    color: rgba(255,255,255,1);
+    transition: all 0.3s linear 0s;
 }

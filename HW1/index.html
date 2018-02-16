@@ -1,12 +1,210 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <title></title>
+        <title>Andy Rash</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
+        <header class="nav-list-container">
+            <ul class="nav-list">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#interests">Interests</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#resume">Résumé</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </header>
+        <main>
+            <section id="home">
+                <article class="half">
+                    <header>
+                        <h1>Andy Rash</h1>
+                    </header>
+                    <p>Strong interest in computer security. Excellent organization and project management skills. Competent public speaker and skillful technical writer. Quick learner with a command of Java, C++, and Python, as well as advanced knowledge of UNIX / Linux. Experienced in relational data modeling and the fundamentals of information security.</p>
+                </article>
+                <aside class="half shrink">
+                    <figure>
+                        <img class="homepage-image" src="img/self-0.jpg" alt="">
+                    </figure>
+                </aside>
+            </section>
+            <section id="interests">
+                <header>
+                    <h1>Interests</h1>
+                </header>
+                <ul id="interests-list">
+                    <li>Computers</li>
+                    <li>Cooking</li>
+                    <li>Video games</li>
+                    <li>Travelling</li>
+                    <li>Languages</li>
+                </ul>
+            </section>
+            <section id="courses">
+                <header class="section-header">
+                    <h1>Courses</h1>
+                </header>
+
+                <!-- credit for table goes to:
+                     https://codepen.io/alassetter/pen/cyrfB?editors=1100
+                -->
+                <table class="table-fill">
+	            	<thead>
+	            		<tr>
+	            			<th class="text-left">&nbsp;</th>
+	            			<th class="text-center">2014</th>
+	            			<th class="text-center">2015</th>
+	            			<th class="text-center">2016</th>
+	            			<th class="text-center">2017</th>
+	            			<th class="text-center">2018</th>
+	            		</tr>
+	            	</thead>
+	            	<tbody class="table-hover">
+	            		<tr>
+	            			<td class="text-center">January</td>
+	            			<td class="text-left">&nbsp;</td>
+	            			<td class="text-left">&nbsp;</td>
+	            			<td class="text-left">MATH 1338</td>
+	            			<td class="text-left">&nbsp;</td>
+	            			<td class="text-left">&nbsp;</td>
+	            		</tr>
+	            		<tr>
+	            			<td rowspan="5" class="text-center">Spring</td>
+	            			<td class="text-left">&nbsp;</td>
+	            			<td class="text-left">MATH 1337</td>
+	            			<td class="text-left">CEE 1331</td>
+	            			<td class="text-left">CSE 3381</td>
+	            			<td class="text-left">CSE 5349</td>
+	            		</tr>
+	            		<tr>
+	            			<td class="text-left">&nbsp;</td>
+	            			<td class="text-left">KNW 2300</td>
+	            			<td class="text-left">MATH 3353</td>
+	            			<td class="text-left">CSE 4344</td>
+	            			<td class="text-left">EMIS 3308</td>
+	            		</tr>
+	            		<tr>
+	            			<td class="text-left">&nbsp;</td>
+	            			<td class="text-left">CSE 1342</td>
+	            			<td class="text-left">CSE 2341</td>
+	            			<td class="text-left">CEE 3302</td>
+	            			<td class="text-left">CSE 5359</td>
+	            		</tr>
+	            		<tr>
+	            			<td class="text-left">&nbsp;</td>
+	            			<td class="text-left">CSE 2353</td>
+	            			<td class="text-left">CSE 2240</td>
+	            			<td class="text-left">CSE 3353</td>
+	            			<td class="text-left">CSE 4352</td>
+	            		</tr>
+	            		<tr>
+	            			<td class="text-left">&nbsp;</td>
+	            			<td class="text-left">DISC 1313</td>
+	            			<td class="text-left">&nbsp;</td>
+	            			<td class="text-left">GEOL 1313</td>
+	            			<td class="text-left">CSE 3345</td>
+	            		</tr>
+	            		<tr>
+	            			<td rowspan="3" class="text-center">Summer</td>
+	            			<td class="text-left">&nbsp;</td>
+	            			<td class="text-left">&nbsp;</td>
+	            			<td class="text-left">&nbsp;</td>
+	            			<td class="text-left">CSE 5343</td>
+	            			<td class="text-left">&nbsp;</td>
+	            		</tr>
+	            		<tr>
+	            			<td class="text-left">&nbsp;</td>
+	            			<td class="text-left">&nbsp;</td>
+	            			<td class="text-left">&nbsp;</td>
+	            			<td class="text-left">PHYS 1106</td>
+	            			<td class="text-left">&nbsp;</td>
+	            		</tr>
+	            		<tr>
+	            			<td class="text-left">&nbsp;</td>
+	            			<td class="text-left">&nbsp;</td>
+	            			<td class="text-left">&nbsp;</td>
+	            			<td class="text-left">PHYS 1304</td>
+	            			<td class="text-left">&nbsp;</td>
+	            		</tr>
+	            		<tr>
+	            			<td rowspan="6" class="text-center">Fall</td>
+	            			<td class="text-left">MATH 1304</td>
+	            			<td class="text-left">PHYS 1105</td>
+	            			<td class="text-left">CSE 3330</td>
+	            			<td class="text-left">CSE 5339</td>
+	            			<td class="text-left">CSE 4360</td>
+	            		</tr>
+	            		<tr>
+	            			<td class="text-left">PHIL 1301</td>
+	            			<td class="text-left">PHYS 1303</td>
+	            			<td class="text-left">CSE 3339</td>
+	            			<td class="text-left">MATH 3316</td>
+	            			<td class="text-left">CSE 5xxx</td>
+	            		</tr>
+	            		<tr>
+	            			<td class="text-left">PRW 1101</td>
+	            			<td class="text-left">CSE 2341</td>
+	            			<td class="text-left">CSE 4340</td>
+	            			<td class="text-left">CSE 4345</td>
+	            			<td class="text-left">CSE 5xxx</td>
+	            		</tr>
+	            		<tr>
+	            			<td class="text-left">SOCI 1300</td>
+	            			<td class="text-left">CSE 2240</td>
+	            			<td class="text-left">CSE 3342</td>
+	            			<td class="text-left">CSE 4351</td>
+	            			<td class="text-left">XXX xxxx</td>
+	            		</tr>
+	            		<tr>
+	            			<td class="text-left">CSE 1341</td>
+	            			<td class="text-left">&nbsp;</td>
+	            			<td class="text-left">&nbsp;</td>
+	            			<td class="text-left">CSE 4381</td>
+	            			<td class="text-left">&nbsp;</td>
+	            		</tr>
+	            		<tr>
+	            			<td class="text-left">ANTH 2363</td>
+	            			<td class="text-left">&nbsp;</td>
+	            			<td class="text-left">&nbsp;</td>
+	            			<td class="text-left">PRW 2110</td>
+	            			<td class="text-left">&nbsp;</td>
+	            		</tr>
+	            	</tbody>
+	            </table>
+            </section>
+            <section id="resume">
+                <header>
+                    <h1>Résumé</h1>
+                </header>
+                <object class="resume-container" data="img/2018-01-29_RobertRash-Resume.pdf" type="application/pdf">
+                    alt: <a href="img/2018-01-29_RobertRash-Resume.pdf">2018-01-29_RobertRash-Resume.pdf</a>
+                </object>
+            </section>
+            <section id="contact">
+                <header>
+                    <h1>Contact</h1>
+                </header>
+                <div class="contact-form-container">
+                    <form name="contact-form" action="#" class="contact-form">
+                        <div class="contact-form-name">
+                            <input type="text" id="contact-form-name" name="contact-form-name" placeholder="Name">
+                        </div>
+                        <div class="contact-form-email">
+                            <input type="text" id="contact-form-email" name="contact-form-email" placeholder="Email">
+                        </div>
+                        <div class="contact-form-message">
+                            <textarea name="contact-form-message" id="contact-form-message" placeholder="Message"></textarea>
+                        </div>
+                        <button name="contact-form-submit" id="contact-form-submit">Send</button>
+                    </form>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <p>Copyright © 2018 Andy Rash</p>
+        </footer>
     </body>
 </html>
