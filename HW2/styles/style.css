@@ -1,0 +1,71 @@
+﻿
+.add-course-button {
+    height: 66.7%;
+}
+
+.content-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.course-catalog-card {
+    width: 100%;
+}
+
+div.card-body > a {
+    width: 100%;
+}
+
+.enrollment-tabs {
+    border-bottom: 0;
+    padding: 0 1rem;
+}
+
+.enrollment-tabs:hover {
+    border-bottom: 0;
+}
+
+.enrollment-tabs-header {
+    margin-bottom: 0;
+}
+
+.main-content {
+    margin-top: 1.5rem;
+}
+
+.modal-header {
+    background-color: rgb(108,117,125);
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.modal-title {
+    color: rgb(255,255,255);
+}
+
+.navbar-logo {
+    height: auto;
+    width: 25vw;
+}
+
+.nav-item {
+    margin: 0 0.5rem;
+}
+
+.nav-item:first-child {
+    margin-left: 0;
+    margin-right: 0.5rem;
+}
+
+.nav-item:last-child {
+    margin-left: 0.5rem;
+    margin-right: 0;
+}
+
+.tab-pane {
+    border: 1px solid rgb(222,226,230);
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}
+
