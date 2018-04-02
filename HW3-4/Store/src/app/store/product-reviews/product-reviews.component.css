@@ -1,0 +1,16 @@
+.add-review {
+	margin-top: 1.5rem;
+}
+
+.metadata {
+	display: flex;
+	justify-content: space-between;
+}
+
+.review {
+	margin-bottom: 1.5rem;
+}
+
+#reviewRating {
+	display: block;
+}

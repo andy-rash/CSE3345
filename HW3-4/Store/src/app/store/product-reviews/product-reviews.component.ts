@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { DatePipe } from '@angular/common';
+import { ProductReview } from '../../domain';
 
 @Component({
   selector: 'app-product-reviews',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductReviewsComponent implements OnInit {
 
-  constructor() { }
+    @Input()
+    public reviews: Array<ProductReview> = new Array<ProductReview>();
 
-  ngOnInit() {
-  }
+    public newRating: number;
+    public newReview: ProductReview = new ProductReview();
+
+    constructor() { }
+
+    ngOnInit() { }
+
+    addReview() {
+    	this.newReview.date = new Date();
+    	this.reviews.push(this.newReview);
+    	this.newReview = new ProductReview();
+    }
 
 }

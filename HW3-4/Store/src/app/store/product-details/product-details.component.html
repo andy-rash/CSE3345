@@ -1,3 +1,33 @@
-<p>
-  product-details works!
-</p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="#">Tasty snacks</a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">
+                        {{ product.name }}
+                    </li>
+                </ol>
+            </nav>
+        </div>
+        <div class="col-md-12">
+            <div class="jumbotron bg-light">
+                <div class="row">
+                    <div class="col-md-3">
+                        <img [src]="imgSrc" [alt]="product.name">
+                    </div>
+                    <div class="col-md-9">
+                        <h4 class="display-4">{{ product.name }}</h4>
+                        <h2><span class="badge badge-primary price-badge">{{ product.price | currency }}</span></h2>
+                        <p class="lead">{{ product.description }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <app-product-reviews [reviews]="product.reviews"></app-product-reviews>
+        </div>
+    </div>
+</div>
