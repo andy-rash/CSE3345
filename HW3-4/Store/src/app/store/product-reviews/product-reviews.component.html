@@ -1,0 +1,112 @@
+<div class="container">
+
+    <h4>Product Reviews <span class="text-muted">({{ reviews.length }})</span></h4>
+    <div *ngIf="reviews.length === 0">
+
+        <div class="alert alert-secondary bg-light">
+            Be the first to add a review!
+        </div>
+
+    </div>
+
+    <div *ngFor="let review of reviews" class="row">
+        
+        <div class="col-md-12 review">
+            <div class="card">
+                <div class="card-header">
+                    <app-rating [ratingValue]="review.rating"></app-rating>
+                </div>
+                
+                <div class="card-body">
+                    <div class="metadata text-muted">
+                        <div>{{ review.userName }}</div>
+                        <div>{{ review.date | date:'mediumDate' }}</div>
+                    </div>
+                    <div class="comment-body">{{ review.comment }}</div>
+                </div><!-- .card-body-->
+            </div><!-- .card -->
+        </div><!-- .review -->
+    </div><!-- .row -->
+</div><!-- .container -->
+
+<div class="container">
+
+    <div class="row">
+        
+        <div class="col-md-12">
+            
+            <div class="card">
+
+                <div class="card-header bg-secondary">
+                    <h4 class="text-white">Add Review</h4>
+                </div>
+
+                <div class="card-body">
+                
+                    <form #reviewForm="ngForm">
+                        
+                        <div class="row">
+                        
+                            <div class="col-md-8">
+                            
+                                <div class="form-group">
+                                
+                                    <label for="reviewNameInput">Your Name</label>
+                                    <input type="text" class="form-control" id="reviewNameInput" required [(ngModel)]="newReview.userName" name="reviewNameInput">
+                                
+                                </div>
+                            
+                            </div>
+                        
+                            <div class="col-md-2">
+                            
+                                <div class="form-group">
+                                
+                                    <label for="reviewRatingSelect">Rating</label>
+                                    <select class="form-control" id="reviewRatingSelect" required [(ngModel)]="newReview.rating" name="rating">
+                                        <option *ngFor="let level of [1,2,3,4,5]" [value]="level">{{ level }}</option>
+                                    </select>
+                                
+                                </div>
+                            
+                            </div>
+
+                            <div class="col-md-2">
+
+                                <div class="form-group">
+                                
+                                    <label for="reviewRating"></label>
+                                    <app-rating [ratingValue]="newReview.rating" id="reviewRating"></app-rating>
+                                
+                                </div>
+
+                            </div>
+                        
+                        </div>
+                        
+                        <div class="row">
+                        
+                            <div class="col-md-12">
+                            
+                                <div class="form-group">
+                                    <label for="reviewCommentTextArea">Comment</label>
+                                    <textarea class="form-control" id="reviewCommentTextArea" rows=5 required [(ngModel)]="newReview.comment" name="comment"></textarea>
+                                </div>
+                            
+                            </div>
+                        
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" [disabled]="reviewForm.form.invalid" (click)="addReview(); reviewForm.reset();">Submit</button>
+                    
+                    </form>
+                
+                </div>
+            
+            </div>
+        
+        </div>
+
+    </div>
+
+</div>
