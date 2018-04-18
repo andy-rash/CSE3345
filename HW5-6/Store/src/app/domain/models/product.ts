@@ -7,7 +7,7 @@ export class Product {
 	description: string;
 	imageName: string;
 	price: number;
-	reviews: Array<ProductReview>;
+	reviews: ProductReview[];
 
 	constructor(
 		id: number,
@@ -15,7 +15,7 @@ export class Product {
 		description: string,
 		imageName: string,
 		price: number,
-		reviews: Array<ProductReview>
+		reviews: ProductReview[]
 	) {
 		this.id = id;
 		this.name = name;

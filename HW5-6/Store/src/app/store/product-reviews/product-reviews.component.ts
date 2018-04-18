@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
 import { DatePipe } from '@angular/common';
 import { ProductReview } from '../../domain';
 
@@ -12,16 +13,23 @@ export class ProductReviewsComponent implements OnInit {
 	@Input()
 	public reviews: Array<ProductReview> = new Array<ProductReview>();
 
+	@Output()
+	public addedReview = new EventEmitter<ProductReview>();
+
 	public newRating: number;
 	public newReview: ProductReview = new ProductReview();
 
-	constructor() { }
+	constructor(
+		private router: Router
+	) { }
 
 	ngOnInit() { }
 
 	addReview() {
 		this.newReview.date = new Date();
+		this.newReview.productId = +this.router.url.split('/')[2];
 		this.reviews.push(this.newReview);
+		this.addedReview.emit(this.newReview);
 		this.newReview = new ProductReview();
 	}
 

@@ -4,10 +4,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 /*
  * Modules
  * */
+import { StoreRoutingModule } from './store-routing.module';
 
 /*
  * Components
@@ -18,10 +20,17 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { ProductReviewsComponent } from './product-reviews/product-reviews.component';
 import { RatingComponent } from './rating/rating.component';
 
+/*
+ * Services
+ * */
+import { ProductRepository, ProductReviewRepository } from '../domain';
+
 @NgModule({
 	imports: [
 		CommonModule,
-		FormsModule
+		FormsModule,
+		HttpClientModule,
+		StoreRoutingModule
 	],
 	declarations: [
 		CartComponent,
@@ -33,6 +42,9 @@ import { RatingComponent } from './rating/rating.component';
 	exports: [
 		ProductDetailsComponent,
 	],
-	providers: [ ]
+	providers: [
+		ProductRepository,
+		ProductReviewRepository
+	]
 })
 export class StoreModule { }
