@@ -1,0 +1,42 @@
+<div class="container">
+	<div class="row" *ngIf="product$ | async as product">
+
+		<div class="col-md-12">
+			<nav aria-label="breadcrumb">
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item">
+						<a [routerLink]="['/products']">Tasty snacks</a>
+					</li>
+					<li class="breadcrumb-item active" aria-current="page">
+						{{ product.name }}
+					</li>
+				</ol>
+			</nav>
+		</div> <!-- breadcrumb navbar -->
+
+		<div class="col-md-12">
+			<div class="jumbotron bg-light">
+				<div class="row">
+					<div class="col-md-3">
+
+						<div class="scalable-image-container">
+							<img [src]="product.imageName" [alt]="product.name" class="scalable-image">
+						</div>
+
+					</div>
+					<div class="col-md-9">
+						<h4 class="display-4">{{ product.name }}</h4>
+						<h2><span class="badge badge-primary price-badge">{{ product.price | currency }}</span></h2>
+						<p class="lead">{{ product.description }}</p>
+						<button type="submit" class="btn btn-success" (click)="addToCart(product);"><strong>Add to Cart</strong></button>
+					</div>
+				</div>
+			</div>
+		</div> <!-- product details -->
+
+		<div class="col-md-12">
+			<app-product-reviews [reviews]="product.reviews" (addedReview)="addedReview($event)"></app-product-reviews>
+		</div> <!-- reviews -->
+
+	</div>
+</div>
