@@ -1,4 +1,11 @@
-import { Component, OnInit, Input } from '@angular/core';
+/*
+ * Angular library
+ * */
+import {
+	Component,
+	OnInit,
+	Input
+} from '@angular/core';
 
 @Component({
 	selector: 'app-rating',

@@ -1,4 +1,22 @@
+/*
+ * Angular library
+ * */
 import { Component, OnInit } from '@angular/core';
+
+/*
+ * RxJS
+ * */
+import { Observable } from 'rxjs';
+
+/*
+ * Models
+ * */
+ import { Cart, Product } from '../../domain';
+
+/*
+ * Services
+ * */
+import { CartService } from '../../domain';
 
 @Component({
 	selector: 'app-cart',
@@ -7,8 +25,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CartComponent implements OnInit {
 
-	constructor() { }
+	private cart: Cart;
 
-	ngOnInit() { }
+	constructor(
+		public cartService: CartService
+	) { }
+
+	ngOnInit() {
+
+		this.cartService.cart.subscribe((cart) => {
+			this.cart = cart;
+		});
+
+	}
+
+	listCart() {
+		this.cartService.cart.subscribe((cart) => {
+			console.log(typeof(cart), this.cart);
+		});
+	}
 
 }

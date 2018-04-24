@@ -32,7 +32,7 @@ export class ProductListComponent implements OnInit {
 		private activatedRoute: ActivatedRoute,
 		private router: Router,
 		public productRepository: ProductRepository,
-		public cart: CartService
+		public cartService: CartService
 	) { }
 
 	ngOnInit() {
@@ -70,7 +70,14 @@ export class ProductListComponent implements OnInit {
 	}
 
 	public addToCart(productId: number) {
-		this.cart.addToCart(this.products.find(x => x.id == productId), 1);
+
+		var item = this.products.find(x => x.id == productId);
+
+		if(item) {
+			this.cartService.addToCart(item, 1);
+		} else {
+			console.log("Unable to add Product with ID" + productId + " to cart.");
+		}
 	}
 
 	public gotoProductDetails(productId: number) {
@@ -78,7 +85,7 @@ export class ProductListComponent implements OnInit {
 	}
 
 	public consoleListCart() {
-		this.cart.listCart();
+		this.cartService.listCart();
 	}
 
 }

@@ -19,6 +19,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductReviewsComponent } from './product-reviews/product-reviews.component';
 import { RatingComponent } from './rating/rating.component';
+import { StoreHeaderComponent } from './store-header/store-header.component';
 
 /*
  * Services
@@ -41,10 +42,12 @@ import {
 		ProductDetailsComponent,
 		ProductListComponent,
 		ProductReviewsComponent,
-		RatingComponent
+		RatingComponent,
+		StoreHeaderComponent
 	],
 	exports: [
 		ProductDetailsComponent,
+		StoreHeaderComponent
 	],
 	providers: [
 		CartService,

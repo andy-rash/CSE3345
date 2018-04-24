@@ -1,6 +1,19 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+/*
+ * Angular library
+ * */
+import {
+	Component,
+	OnInit,
+	Input,
+	Output,
+	EventEmitter
+} from '@angular/core';
 import { Router } from '@angular/router';
 import { DatePipe } from '@angular/common';
+
+/*
+ * Models
+ * */
 import { ProductReview } from '../../domain';
 
 @Component({

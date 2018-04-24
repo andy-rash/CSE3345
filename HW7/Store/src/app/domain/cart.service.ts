@@ -21,7 +21,7 @@ export class CartService {
 		items: []
 	}
 
-	public cart = new BehaviorSubject<Cart>(this._cartSubject);
+	public cart: BehaviorSubject<Cart> = new BehaviorSubject<Cart>(this._cartSubject);
 
 	public addToCart(product: Product, quantity: number) {
 

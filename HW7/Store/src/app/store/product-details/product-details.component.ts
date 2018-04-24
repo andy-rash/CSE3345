@@ -41,7 +41,7 @@ export class ProductDetailsComponent implements OnInit {
 		private router: Router,
 		public productRepository: ProductRepository,
 		public productReviewRepository: ProductReviewRepository,
-		public cart: CartService
+		public cartService: CartService
 	) { }
 
 	ngOnInit() {
@@ -59,8 +59,7 @@ export class ProductDetailsComponent implements OnInit {
 	}
 
 	public addToCart(product: Product, quantity: number) {
-		this.cart.addToCart(product, +quantity);
-		this.cart.listCart();
+		this.cartService.addToCart(product, +quantity);
 	}
 
 	public addedReview(event) {
