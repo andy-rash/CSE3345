@@ -3,25 +3,60 @@
 <div *ngIf="cart.items.length === 0">
 
 	<div class="alert alert-secondary bg-light">
-		Be the first to add a review!
+		No items in cart.
 	</div>
 
 </div>
 
-<table class="table table-striped">
+<div *ngIf="cart.items.length > 0">
 
-	<thead>
-		<tr>
-			<th scope="col">Quantity</th>
-			<th scope="col">Item</th>
-			<th scope="col">Price</th>
-		</tr>
-	</thead>
+	<table class="table table-striped">
 
-	<tbody>
+		<thead>
+			<tr>
+				<th scope="col">Quantity</th>
+				<th scope="col">Product</th>
+				<th scope="col" class="table-price-align">Total</th>
+			</tr>
+		</thead>
 
+		<tbody>
 
+			<tr *ngFor="let item of cart.items">
 
-	</tbody>
+				<td>
 
-</table>
+					<div class="quantity-input-container">
+						<input type="number" class="quantity-input" id="cartInputProductQuantity" min="0" placeholder="1" [value]="item.quantity" #quantity (change)="updateQuantity(item.product.id, quantity.value);">
+					</div>
+
+				</td>
+
+				<td>
+					<a [routerLink]="['/products', item.product.id]">
+						{{ item.product.name }}
+					</a>
+				</td>
+
+				<td class="table-price-align">
+					{{ item.totalPrice | currency }}
+				</td>
+
+			</tr>
+
+		</tbody>
+
+	</table>
+
+	<div class="total-price-container">
+		<strong>Total: {{ cart.totalPrice | currency }}</strong>
+	</div>
+
+	<hr>
+
+	<div class="bottom-navigation">
+		<button class="btn btn-info" [routerLink]="['/products']">Continue Shopping</button>
+		<button class="btn btn-primary">Checkout</button>
+	</div>
+
+</div>

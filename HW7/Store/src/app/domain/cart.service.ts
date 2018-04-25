@@ -69,8 +69,4 @@ export class CartService {
 		this.cart.next(this._cartSubject);
 	}
 
-	public listCart() {
-		console.log(this._cartSubject);
-	}
-
 }

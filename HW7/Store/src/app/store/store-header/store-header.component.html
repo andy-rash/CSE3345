@@ -1,13 +1,9 @@
-<div id="accordion">
+<nav class="navbar navbar-dark bg-primary store-header justify-content-end">
 
-	<div class="card">
+	<ul class="navbar-nav">
+		<li class="nav-item">
+			<a class="nav-link active" [routerLink]="['/cart']">Cart ({{ cartItemCount }})</a>
+		</li>
+	</ul>
 
-		<div class="card-header"></div>
-
-		<div class="collapse show"></div>
-
-	</div>
-
-</div>
-
-<app-cart></app-cart>
+</nav>

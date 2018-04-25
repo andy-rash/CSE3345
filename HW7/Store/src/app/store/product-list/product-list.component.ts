@@ -2,7 +2,8 @@
  * Angular library
  * */
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { CurrencyPipe } from '@angular/common';
+import { Router, RouterLink } from '@angular/router';
 
 /*
  * Models
@@ -29,7 +30,6 @@ export class ProductListComponent implements OnInit {
 	public products: Product[];
 
 	constructor(
-		private activatedRoute: ActivatedRoute,
 		private router: Router,
 		public productRepository: ProductRepository,
 		public cartService: CartService
@@ -78,14 +78,6 @@ export class ProductListComponent implements OnInit {
 		} else {
 			console.log("Unable to add Product with ID" + productId + " to cart.");
 		}
-	}
-
-	public gotoProductDetails(productId: number) {
-		this.router.navigateByUrl('/products/'+String(productId));
-	}
-
-	public consoleListCart() {
-		this.cartService.listCart();
 	}
 
 }

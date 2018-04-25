@@ -5,6 +5,7 @@ import {
 	Component,
 	OnInit
 } from '@angular/core';
+import { Router, RouterLink } from '@angular/router';
 
 /*
  * Services
@@ -18,9 +19,18 @@ import { CartService } from '../../domain';
 })
 export class StoreHeaderComponent implements OnInit {
 
+	public cartItemCount: number;
+
 	constructor(
+		private router: Router,
 		public cartService: CartService
-	) { }
+	) {
+
+		this.cartService.cart.subscribe((cart) => {
+			this.cartItemCount = cart.items.length;
+		});
+
+	}
 
 	ngOnInit() { }
 

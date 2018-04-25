@@ -2,6 +2,8 @@
  * Angular library
  * */
 import { Component, OnInit } from '@angular/core';
+import { CurrencyPipe } from '@angular/common';
+import { Router, RouterLink } from '@angular/router';
 
 /*
  * RxJS
@@ -28,6 +30,7 @@ export class CartComponent implements OnInit {
 	private cart: Cart;
 
 	constructor(
+		private router: Router,
 		public cartService: CartService
 	) { }
 
@@ -39,10 +42,9 @@ export class CartComponent implements OnInit {
 
 	}
 
-	listCart() {
-		this.cartService.cart.subscribe((cart) => {
-			console.log(typeof(cart), this.cart);
-		});
+	updateQuantity(productId: number, quantity: number) {
+		console.log(productId, quantity);
+		this.cartService.updateQuantity(productId, quantity);
 	}
 
 }
