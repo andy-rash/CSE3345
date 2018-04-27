@@ -1,0 +1,62 @@
+<h1>Shopping Cart</h1>
+
+<div *ngIf="cart.items.length === 0">
+
+	<div class="alert alert-secondary bg-light">
+		No items in cart.
+	</div>
+
+</div>
+
+<div *ngIf="cart.items.length > 0">
+
+	<table class="table table-striped">
+
+		<thead>
+			<tr>
+				<th scope="col">Quantity</th>
+				<th scope="col">Product</th>
+				<th scope="col" class="table-price-align">Total</th>
+			</tr>
+		</thead>
+
+		<tbody>
+
+			<tr *ngFor="let item of cart.items">
+
+				<td>
+
+					<div class="quantity-input-container">
+						<input type="number" class="quantity-input" id="cartInputProductQuantity" min="0" placeholder="1" [value]="item.quantity" #quantity (change)="updateQuantity(item.product.id, quantity.value);">
+					</div>
+
+				</td>
+
+				<td>
+					<a [routerLink]="['/products', item.product.id]">
+						{{ item.product.name }}
+					</a>
+				</td>
+
+				<td class="table-price-align">
+					{{ item.totalPrice | currency }}
+				</td>
+
+			</tr>
+
+		</tbody>
+
+	</table>
+
+	<div class="total-price-container">
+		<strong>Total: {{ cart.totalPrice | currency }}</strong>
+	</div>
+
+	<hr>
+
+	<div class="bottom-navigation">
+		<button class="btn btn-info" [routerLink]="['/products']">Continue Shopping</button>
+		<button class="btn btn-primary">Checkout</button>
+	</div>
+
+</div>
